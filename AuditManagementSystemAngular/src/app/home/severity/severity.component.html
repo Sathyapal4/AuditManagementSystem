@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Template</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand text-white  nav-link" routerLink="/home" routerLinkActive="active">Audit Management System</a>
+            <a class="text-white mr-auto nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+            <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+
+        </nav>
+
+</div>
+
+
+    <div>
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Value</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Audit Id</th>
+                <td>{{auditRespons.auditId}}</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">Project Execution Status</th>
+                <td>{{auditRespons.projectExecutionStatus}}</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">RemedialActionDuration</th>
+                <td>{{auditRespons.remedialActionDuration}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Project Name</th>
+                <td>{{audReq.ProjectName}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Project Manager Name</th>
+                <td>{{audReq.ProjectManagerName}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Application Owner Name</th>
+                <td>{{audReq.ApplicationOwnerName}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Date</th>
+                <td>{{audReq.AuditDate}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

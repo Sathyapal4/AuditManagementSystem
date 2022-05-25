@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Template</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand text-white  nav-link" routerLink="/home" routerLinkActive="active">Audit Management System</a>
+            <a class="text-white mr-auto nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+            <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+
+        </nav>
+
+</div>
+
+
+
+
+
+<div class="py-5">
+    <div class="row" style="border-radius: 50%;">
+      <div class="col-md-6 mx-auto" style="border-radius: 10%;">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-10">
+          <div class="card-header" style="background-color: rgb(121, 194, 212);">
+            <h3 class="mb-0" >Checklist</h3>
+          </div>
+          <div class="card-body">
+            <form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+              
+              <div class="form-group">
+                <label for="l1">Project Name</label>
+                <input type="text" id="l1" style="margin-left: 100px" placeholder="Project Name"
+                name="name1" #name="ngModel"[(ngModel)]="service.getTypeDetails.ProjectName" required>
+            </div>
+        
+        
+            <div class="form-group">
+                <label for="l2" >Project Manager Name</label> 
+                <input type="text" id="l2" style="margin-left: 33px" placeholder="Project Manager Name"
+                name="name2" #name="ngModel"[(ngModel)]="service.getTypeDetails.ProjectManagerName" required>
+            </div>
+        
+        
+            <div class="form-group">
+                <label for="l3" >Application Owner Name</label> 
+                <input type="text" id="l3" style="margin-left: 20px" placeholder="Application Owner Name"
+                name="name3" #name="ngModel"[(ngModel)]="service.getTypeDetails.ApplicationOwnerName" required>
+            </div>
+        
+        
+            <div class="form-group">
+                <label for="l4"  >Date</label>
+                <input type="date" id="l4" style="margin-left: 165px"
+                name="name4" #name="ngModel"[(ngModel)]="service.getTypeDetails.AuditDate" required>
+            </div>
+            <div>
+
+                <input type="checkbox" id="l5" name="name5" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question1" required> &nbsp;
+                <label for="l5">Have all Change requests followed SDLC before PROD move?</label><br>
+              
+                <input type="checkbox" id="l6" name="name6" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question2" required>&nbsp;
+                <label for="l6">Have all Change requests been approved by the application owner?</label><br>
+                
+                <input type="checkbox" id="l7" name="name7" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question3" required>&nbsp;
+                <label for="l7">Are all artifacts like CR document, Unit test cases available?</label><br>
+                
+                <input type="checkbox" id="l8" name="name8" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question4" required>&nbsp;
+                <label for="l8">Is the SIT and UAT sign-off available?</label><br>
+                
+                <input type="checkbox" id="l9" name="name9" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question5" required>&nbsp;
+                <label for="l9">Is data deletion from the system done with application owner approval?</label><br>
+               
+              
+                  </div>
+              
+                <div class="form-group">
+                  <button class="btn btn-info btn-lg btm-block" style=" margin-top: 8%; background-color: rgb(0, 183, 255); color: red; margin-top: 10%; margin-left: 100px; height: 20%; width: 300px;"  class="btn btn-block " type="submit" >
+                      Submit
+                  </button>
+                </div>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+
+    
+    <div class="form-group">
+        <label for="l1">Project Name</label>
+        <input type="text" id="l1" placeholder="Project Name"
+        name="name1" #name="ngModel"[(ngModel)]="service.getTypeDetails.ProjectName" required>
+    </div>
+
+
+    <div class="form-group">
+        <label for="l2" >Project Manager Name</label>
+        <input type="text" id="l2" placeholder="Project Manager Name"
+        name="name2" #name="ngModel"[(ngModel)]="service.getTypeDetails.ProjectManagerName" required>
+    </div>
+
+
+    <div class="form-group">
+        <label for="l3" >Application Owner Name</label>
+        <input type="text" id="l3" placeholder="Application Owner Name"
+        name="name3" #name="ngModel"[(ngModel)]="service.getTypeDetails.ApplicationOwnerName" required>
+    </div>
+
+
+    <div class="form-group">
+        <label for="l4" >Date</label>
+        <input type="date" id="l4"
+        name="name4" #name="ngModel"[(ngModel)]="service.getTypeDetails.AuditDate" required>
+    </div>
+
+    
+
+    <div>
+
+  <input type="checkbox" id="l5" name="name5" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question1" required>
+  <label for="l5">Have all Change requests followed SDLC before PROD move?</label><br>
+
+  <input type="checkbox" id="l6" name="name6" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question2" required>
+  <label for="l6">Have all Change requests been approved by the application owner?</label><br>
+  
+  <input type="checkbox" id="l7" name="name7" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question3" required>
+  <label for="l7">Are all artifacts like CR document, Unit test cases available?</label><br>
+  
+  <input type="checkbox" id="l8" name="name8" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question4" required>
+  <label for="l8">Is the SIT and UAT sign-off available?</label><br>
+  
+  <input type="checkbox" id="l9" name="name9" #name="ngModel"[(ngModel)]="service.getTypeDetails.Question5" required>
+  <label for="l9">Is data deletion from the system done with application owner approval?</label><br>
+ 
+
+    </div>
+
+  <div class="form-group">
+    <button class="btn btn-info btn-lg btm-block" style=" margin-top: 8%; background-color: rgb(0, 183, 255); color: red; margin-top: 10%; margin-left: 100px; height: 20%; width: 300px;"  class="btn btn-block " type="submit" >
+        Submit
+    </button>
+  </div>
+
+</form>
+
+
+
+<p>Checklist Works</p>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Checklist</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	</head>
+
+	<body>
+        <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+            <div class="container">
+ 
+                <div class="row no-gutters">
+                   
+        <div class="col-md-6">
+        <div class="card-body">
+		<div class="wrapper">
+			<div class="inner">
+<form novalidate #form="ngForm"  (submit)="onSubmit(form)">
+    <h1 class="center" style="padding-top: 50px; font-size: 350%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >Add Details</h1><br>
+    <div class="form-group">
+        <label for="l1" class="sr-only">Project Name</label>
+        <input type="text" id="l1" class="form-control form-control-lg" placeholder="Project Name" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.ProjectName" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+
+    <div class="form-group">
+        <label for="l2" class="sr-only">Project Manager Name</label>
+        <input type="text" id="l2" class="form-control form-control-lg" placeholder="Project Manager Name" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.ProjectManagerName" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+    <div class="form-group">
+        <label for="l3" class="sr-only">Application Owner Name</label>
+        <input type="text" id="l3" class="form-control form-control-lg" placeholder="Application Owner Name" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.ApplicationOwnerName" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+    <div class="form-group">
+        <label for="l4" class="sr-only">Date</label>
+        <input type="date" id="l4" class="form-control form-control-lg" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.Date" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+
+
+    <h4>Audit Questions</h4>
+
+
+    <div class="form-group">
+        <label for="l5" class="sr-only">Have all Change requests followed SDLC before PROD move?</label>
+        <input type="checkbox" id="l5" class="form-control form-control-lg" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.Question1" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+    <div class="form-group">
+        <label for="l6" class="sr-only">Have all Change requests been approved by the application owner?</label>
+        <input type="checkbox" id="l6" class="form-control form-control-lg" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.Question1" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+    <div class="form-group">
+        <label for="l7" class="sr-only">Are all artifacts like CR document, Unit test cases available?</label>
+        <input type="checkbox" id="l7" class="form-control form-control-lg" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.Question1" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+    <div class="form-group">
+        <label for="l8" class="sr-only">Is the SIT and UAT sign-off available?</label>
+        <input type="checkbox" id="l8" class="form-control form-control-lg" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.Question1" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+    <div class="form-group">
+        <label for="l9" class="sr-only">Is data deletion from the system done with application owner approval?</label>
+        <input type="checkbox" id="l9" class="form-control form-control-lg" style="margin-top: 8%;"
+        name="name" #name="ngModel"[(ngModel)]="service.getChecklist.Question1" required
+        [class.invalid]="name.invalid && name.touched">
+    </div>
+
+    
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btm-block" style=" margin-top: 8%; background-color: rgb(0, 183, 255); color: red; margin-top: 10%; margin-left: 100px; height: 20%; width: 300px;"  class="btn btn-block " type="submit" [disabled]="form.invalid" >
+            Submit
+        </button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body>
+</html>
+
+-->

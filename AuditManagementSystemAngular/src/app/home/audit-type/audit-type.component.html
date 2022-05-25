@@ -1,0 +1,81 @@
+
+
+
+
+<!--
+<form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+ 
+    
+    <div class="form-group">
+        <label for="username" class="sr-only">Audit Type</label>
+        <select class="mb-4 form-control" type="text"  placeholder="Select Audit Type" style="margin-top: 8%;"
+        name="audittype" #audittype="ngModel" [(ngModel)]="service.getType.audittype" required>
+            <option  value = "">----Select----</option>
+            <option value="Internal">Internal</option>
+            
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btm-block" style=" margin-top: 8%; background-color: rgb(0, 183, 255); color: red; margin-top: 10%; margin-left: 15px; height: 20%; width: 300px;"  class="btn btn-block " type="submit" [disabled]="form.invalid" >
+            Submit
+        </button>
+    </div>
+
+     
+</form>
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Template</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-white">Audit Management System</a>
+        <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+      </nav>
+
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container card login-card"> 
+<div class="container">
+    <div class="card-body">
+        <div class="brand-wrapper">
+                <h2>Select the Audit Type</h2>
+              </div>
+<form novalidate #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    
+    <div class="form-group">
+        <label for="username" class="sr-only">Audit Type</label>
+        <select class="form-control" name="audittype" #audittype="ngModel" [(ngModel)]="service.getType.audittype" required>
+            <option  value = "">----Select----</option>
+            <option value="Internal">Internal</option>
+
+        </select>
+        
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btm-block" style=" margin-top: 8%; background-color: rgb(0, 183, 255); color: red; margin-top: 4%; margin-left: 350px; height: 20%; width: 300px;"  class="btn btn-block " type="submit" [disabled]="form.invalid" >
+            Submit
+        </button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</main>
+</body>
+
